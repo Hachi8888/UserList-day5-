@@ -233,7 +233,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="平田 奈那" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pbL-vU-P3s">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -250,7 +250,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="吉澤 優衣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nD9-x5-j2U">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -285,13 +285,65 @@
                     <view key="view" contentMode="scaleToFill" id="63O-sb-ghX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oq-cM-4H0">
+                                <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Gfe-Pt-hCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣味欄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV5-jM-iRA">
+                                <rect key="frame" x="0.0" y="144" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dSU-8m-eJL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmz-Ks-KQP">
+                                <rect key="frame" x="0.0" y="174" width="320" height="394"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpG-aV-bZk">
+                                <rect key="frame" x="0.0" y="94" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bp8-Ad-swE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gmz-Ks-KQP" firstAttribute="leading" secondItem="orJ-de-Suf" secondAttribute="leading" id="0UX-6T-E1i"/>
+                            <constraint firstItem="orJ-de-Suf" firstAttribute="trailing" secondItem="jpG-aV-bZk" secondAttribute="trailing" id="29R-2E-to8"/>
+                            <constraint firstItem="orJ-de-Suf" firstAttribute="trailing" secondItem="QV5-jM-iRA" secondAttribute="trailing" id="92R-MF-0Ku"/>
+                            <constraint firstItem="gmz-Ks-KQP" firstAttribute="top" secondItem="QV5-jM-iRA" secondAttribute="bottom" id="9BR-Z9-OHF"/>
+                            <constraint firstItem="orJ-de-Suf" firstAttribute="trailing" secondItem="gmz-Ks-KQP" secondAttribute="trailing" id="D50-TI-MpL"/>
+                            <constraint firstItem="orJ-de-Suf" firstAttribute="bottom" secondItem="gmz-Ks-KQP" secondAttribute="bottom" id="F7G-Bq-oSe"/>
+                            <constraint firstItem="QV5-jM-iRA" firstAttribute="top" secondItem="jpG-aV-bZk" secondAttribute="bottom" id="Ww0-EH-rZC"/>
+                            <constraint firstItem="8Oq-cM-4H0" firstAttribute="top" secondItem="orJ-de-Suf" secondAttribute="top" id="Z2p-Yi-3AO"/>
+                            <constraint firstItem="jpG-aV-bZk" firstAttribute="top" secondItem="8Oq-cM-4H0" secondAttribute="bottom" id="fQA-1T-L17"/>
+                            <constraint firstItem="8Oq-cM-4H0" firstAttribute="leading" secondItem="orJ-de-Suf" secondAttribute="leading" id="iyI-dl-Vpm"/>
+                            <constraint firstItem="orJ-de-Suf" firstAttribute="trailing" secondItem="8Oq-cM-4H0" secondAttribute="trailing" id="oYh-bu-LGg"/>
+                            <constraint firstItem="QV5-jM-iRA" firstAttribute="leading" secondItem="orJ-de-Suf" secondAttribute="leading" id="rQb-lN-Uhn"/>
+                            <constraint firstItem="jpG-aV-bZk" firstAttribute="leading" secondItem="orJ-de-Suf" secondAttribute="leading" id="xCt-0X-07h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="orJ-de-Suf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndm-4M-gOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1403" y="121"/>
+            <point key="canvasLocation" x="1402.5" y="120.4225352112676"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="enX-A9-1yk">
