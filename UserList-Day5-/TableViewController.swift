@@ -9,7 +9,6 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
     // 遷移先にわたすデータを格納する変数を定義
     var sendName: String = ""
     var sendHobby: String = ""
@@ -33,23 +32,20 @@ class TableViewController: UITableViewController {
         "サッカー好きの脳筋です。今の趣味はバイトすること週6でみんな大好きcoffee mafiaで働いてますよ!いつでもおいで",
         "あだなは、はち(本名:なな)で、東京にくるたびにハチ公に挨拶しています。弾丸ひとり旅など、突然思い立ったことをやるのが好きです。東京生活わくわくしています〜",
         "ゲームが大好き。特にドラクエをこよなく愛しており、2018年の夏休みは約200時間をドラクエに費やした。他にもピアノや海外旅行や読書など様々な趣味がある。"
-        
     ]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
     // MARK: - Table view data source
-
+    
     // セクションの数
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     // セクションの中のセルの数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -62,19 +58,18 @@ class TableViewController: UITableViewController {
         
         // キャンプ生の名前をセルに表示させる
         cell.textLabel?.text = name[indexPath.row]
-
-        return cell
         
+        return cell
     }
     
     // セルが押されたときの処理
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // 押されたセルの行(キャンプ生の名前)をもとに、遷移先に渡す名前と趣味を定数に格納する
+        // 押されたセルの行(キャンプ生の名前)をもとに、遷移先に渡す名前と趣味を定数に格納する
         sendName = name[indexPath.row]
         sendHobby = hobby[indexPath.row]
         
-     // segueを実行
-      performSegue(withIdentifier: "showData", sender: nil)
+        // segueを実行
+        performSegue(withIdentifier: "showData", sender: nil)
     }
     
     // 遷移準備
