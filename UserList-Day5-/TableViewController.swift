@@ -10,7 +10,6 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    
     // 遷移先にわたすデータを格納する変数を定義
     var sendName: String = ""
     var sendHobby: String = ""
@@ -38,7 +37,6 @@ class TableViewController: UITableViewController {
     ]
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +44,6 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    
     // セクションの数
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -59,7 +56,6 @@ class TableViewController: UITableViewController {
         return name.count
     }
     
-    
     // TableViewのセルのidentifierを設定して、キャンプ生の名前をセルに表示させる
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
@@ -71,21 +67,15 @@ class TableViewController: UITableViewController {
         
     }
     
-    
-    
+    // セルが押されたときの処理
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     // 押されたセルの行(キャンプ生の名前)をもとに、遷移先に渡す名前と趣味を定数に格納する
         sendName = name[indexPath.row]
         sendHobby = hobby[indexPath.row]
         
-        
      // segueを実行
       performSegue(withIdentifier: "showData", sender: nil)
-        
     }
-    
-    
     
     // 遷移準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,58 +83,8 @@ class TableViewController: UITableViewController {
         guard segue.identifier == "showData" , let vc = segue.destination  as? ViewController  else{
             return
         }
-        
         // 遷移先に値を渡す
         vc.catchName = sendName
         vc.catchHobby = sendHobby
-        
     }
-    
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
